@@ -10,6 +10,7 @@ import ShopPage from './pages/shop/Shop';
 import SignInAndSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up';
 import CheckOutPage from './pages/checkout/checkout';
 import Header from './components/header/header';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
