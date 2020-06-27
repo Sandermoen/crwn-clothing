@@ -6,16 +6,18 @@ export const CollectionItemImage = styled.div`
   background-size: cover;
   background-position: center;
   margin-bottom: 5px;
-  background-image: url('${props => props.imageUrl}');
+  background-image: url('${(props) => props.imageUrl}');
 `;
 
 export const CollectionItemContainer = styled.div`
-  width: 22vw;
+  flex-basis: 1;
   display: flex;
   flex-direction: column;
   height: 350px;
   align-items: center;
   position: relative;
+  /* width: 300px; */
+  margin-bottom: 20px;
 
   button {
     width: 80%;
@@ -44,16 +46,17 @@ export const CollectionItemContainer = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    width: 40vw;
+    /* width: 40vw; */
 
     &:hover {
       ${CollectionItemImage} {
         opacity: unset;
       }
-  
+
       button {
         opacity: unset;
       }
+    }
   }
 `;
 

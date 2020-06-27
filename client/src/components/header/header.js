@@ -14,7 +14,7 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  OptionLink
+  OptionLink,
 } from './header.styles';
 
 const HeaderComponent = ({ currentUser, hidden, signOutStart }) => {
@@ -25,7 +25,7 @@ const HeaderComponent = ({ currentUser, hidden, signOutStart }) => {
       </LogoContainer>
       <OptionsContainer>
         <OptionLink to="/shop">SHOP</OptionLink>
-        <OptionLink to="/contact">CONTACT</OptionLink>
+        <a href="http://www.sandersaksenvikmoen.com/">CONTACT</a>
         {currentUser ? (
           <OptionLink as="div" onClick={signOutStart}>
             SIGN OUT
@@ -42,14 +42,11 @@ const HeaderComponent = ({ currentUser, hidden, signOutStart }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  hidden: selectCartHidden
+  hidden: selectCartHidden,
 });
 
-const mapDispatchToProps = dispatch => ({
-  signOutStart: () => dispatch(signOutStart())
+const mapDispatchToProps = (dispatch) => ({
+  signOutStart: () => dispatch(signOutStart()),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HeaderComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);

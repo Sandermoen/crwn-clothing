@@ -5,7 +5,7 @@ export const CollectionPreviewContainer = styled.div`
   flex-direction: column;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1000px) {
     align-items: center;
   }
 `;
@@ -16,12 +16,7 @@ export const PreviewTitle = styled.h1`
 `;
 
 export const PreviewContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  @media screen and (max-width: 800px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  grid-gap: 5px;
 `;
